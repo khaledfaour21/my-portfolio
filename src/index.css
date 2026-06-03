@@ -7,52 +7,57 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
+  unicode-range: U+0600-06FF;
   src: url('/itf_qomra_arabic_fonts/itfQomraArabic-Light.woff2') format('woff2'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Light.woff') format('woff'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Light.ttf') format('truetype');
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Light.woff') format('woff'),
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Light.ttf') format('truetype');
 }
 @font-face {
   font-family: 'itf Qomra Arabic';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+  unicode-range: U+0600-06FF;
   src: url('/itf_qomra_arabic_fonts/itfQomraArabic-Regular.woff2') format('woff2'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Regular.woff') format('woff'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Regular.ttf') format('truetype');
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Regular.woff') format('woff'),
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'itf Qomra Arabic';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
+  unicode-range: U+0600-06FF;
   src: url('/itf_qomra_arabic_fonts/itfQomraArabic-Medium.woff2') format('woff2'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Medium.woff') format('woff'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Medium.ttf') format('truetype');
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Medium.woff') format('woff'),
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'itf Qomra Arabic';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
+  unicode-range: U+0600-06FF;
   src: url('/itf_qomra_arabic_fonts/itfQomraArabic-Bold.woff2') format('woff2'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Bold.woff') format('woff'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Bold.ttf') format('truetype');
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Bold.woff') format('woff'),
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'itf Qomra Arabic';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
+  unicode-range: U+0600-06FF;
   src: url('/itf_qomra_arabic_fonts/itfQomraArabic-Black.woff2') format('woff2'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Black.woff') format('woff'),
-       url('/itf_qomra_arabic_fonts/itfQomraArabic-Black.ttf') format('truetype');
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Black.woff') format('woff'),
+        url('/itf_qomra_arabic_fonts/itfQomraArabic-Black.ttf') format('truetype');
 }
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+   --font-sans: "Inter", "itf Qomra Arabic", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-   --font-arabic: "itf Qomra Arabic", sans-serif;
+   --font-arabic: "itf Qomra Arabic", system-ui, sans-serif;
 
   /* Premium Design Accents */
   --shadow-glass-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -290,5 +295,12 @@ html {
 
 /* RTL Specific Rules */
 [dir="rtl"] {
-  font-family: "Cairo", "Inter", sans-serif;
+   font-family: var(--font-sans);
+}
+
+/* Force custom Arabic font for all elements when text is Arabic */
+*,
+*::before,
+*::after {
+   font-family: var(--font-sans) !important;
 }
