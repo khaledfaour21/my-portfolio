@@ -1,0 +1,4 @@
+Contact: mailto:khaledfaour718@gmail.com
+Canonical: https://khaled-faour.com/.well-known/security.txt
+Preferred-Languages: en, ar
+Policy: https://khaled-faour.com/

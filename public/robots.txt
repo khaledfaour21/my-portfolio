@@ -4,6 +4,8 @@ Allow: /
 Disallow: /demos/
 
 Sitemap: https://khaled-faour.com/sitemap.xml
+
+# IndexNow key: https://khaled-faour.com/62899526498fe149c7e256d427f9c379.txt
 Host: khaled-faour.com
 
 # AI / LLM crawlers (allow official profile for citations)

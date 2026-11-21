@@ -27,6 +27,8 @@ if (!key) {
 
 const urls = [
   `${origin}/`,
+  `${origin}/sitemap.xml`,
+  `${origin}/llms.txt`,
   `${origin}/works/school-erp`,
   `${origin}/works/block5-aleppo`,
   `${origin}/works/e-menu`,
