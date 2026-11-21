@@ -4,7 +4,7 @@
  */
 
 import { LanguageCode } from "./types";
-import { portfolioDemoUrls } from "./lib/demoUrls";
+import { getEmenuDemoUrl, getSchoolDemoUrl } from "./lib/demoUrls";
 
 export type WorkProjectId =
   | "school-erp"
@@ -33,8 +33,14 @@ export interface WorkProjectMeta {
 
 export function resolveDemoUrl(project: WorkProjectMeta): string | undefined {
   if (project.demoKind === "embedded") return project.demoPath;
-  if (project.id === "school-erp") return portfolioDemoUrls.school;
-  if (project.id === "e-menu") return portfolioDemoUrls.emenu;
+  if (project.id === "school-erp") {
+    const url = getSchoolDemoUrl();
+    return url || undefined;
+  }
+  if (project.id === "e-menu") {
+    const url = getEmenuDemoUrl();
+    return url || undefined;
+  }
   return project.demoSrc;
 }
 
@@ -115,7 +121,6 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
     ],
     demoKind: "iframe",
     demoPresentation: "redirect",
-    demoSrc: portfolioDemoUrls.school,
     demoHints: {
       en: [
         "Opens in a full browser window (required for Clerk auth — not inside an iframe).",
@@ -249,7 +254,6 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
       "/work-assets/emenu-preview.webp",
     ],
     demoKind: "iframe",
-    demoSrc: portfolioDemoUrls.emenu,
     demoHints: {
       en: [
         "Start E-Menu on port 3002 with NEXT_PUBLIC_PORTFOLIO_DEMO=true.",

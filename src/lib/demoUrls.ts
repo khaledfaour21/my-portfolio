@@ -1,14 +1,73 @@
-function resolveDemoUrl(envValue: string | undefined, localPort: number): string {
-  const configured = envValue?.trim();
-  if (configured) return configured;
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+export type PortfolioDemoHosts = {
+  school?: string;
+  emenu?: string;
+};
+
+declare global {
+  interface Window {
+    __PORTFOLIO_DEMO_HOSTS__?: PortfolioDemoHosts;
+  }
+}
+
+/** Loaded from /demo-hosts.json before React mounts (see main.tsx). */
+export function getRuntimeDemoHosts(): PortfolioDemoHosts {
+  if (typeof window === "undefined") return {};
+  return window.__PORTFOLIO_DEMO_HOSTS__ ?? {};
+}
+
+function resolveDemoUrl(
+  envValue: string | undefined,
+  runtimeKey: keyof PortfolioDemoHosts,
+  localPort: number,
+  bakedDefault?: string,
+): string {
+  const fromEnv = envValue?.trim();
+  if (fromEnv) return fromEnv;
+
+  const fromFile = getRuntimeDemoHosts()[runtimeKey]?.trim();
+  if (fromFile) return fromFile;
+
+  const fromBaked = bakedDefault?.trim();
+  if (fromBaked) return fromBaked;
+
   if (import.meta.env.DEV) return `http://localhost:${localPort}`;
+
   return "";
 }
 
-const school = resolveDemoUrl(import.meta.env.VITE_SCHOOL_DEMO_URL, 3001);
-const emenu = resolveDemoUrl(import.meta.env.VITE_EMENU_DEMO_URL, 3002);
+/** Vite `define` — optional baked defaults when env + demo-hosts.json are empty. */
+const BAKED_SCHOOL = "";
+const BAKED_EMENU = "https://amohamed.vercel.app";
 
+export function getSchoolDemoUrl(): string {
+  return resolveDemoUrl(
+    import.meta.env.VITE_SCHOOL_DEMO_URL,
+    "school",
+    3001,
+    BAKED_SCHOOL,
+  );
+}
+
+export function getEmenuDemoUrl(): string {
+  return resolveDemoUrl(
+    import.meta.env.VITE_EMENU_DEMO_URL,
+    "emenu",
+    3002,
+    BAKED_EMENU,
+  );
+}
+
+/** @deprecated Use getSchoolDemoUrl / getEmenuDemoUrl — values resolve at call time. */
 export const portfolioDemoUrls = {
-  school,
-  emenu,
-} as const;
+  get school() {
+    return getSchoolDemoUrl();
+  },
+  get emenu() {
+    return getEmenuDemoUrl();
+  },
+};

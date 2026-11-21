@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  VITE_EMENU_DEMO_URL = "https://amohamed.vercel.app"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
