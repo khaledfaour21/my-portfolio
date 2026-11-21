@@ -7,3 +7,6 @@ coverage/
 .env*
 !.env.example
 .indexnow-key
+
+# Local Netlify folder
+.netlify
