@@ -1,8 +1,9 @@
 import { useState, MouseEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Calendar, ChevronRight, Milestone, Star, Award, Sparkles, Layers, Activity, Server, Hammer } from "lucide-react";
+import { Calendar, ChevronRight, Milestone, Star, Award, Sparkles, Layers, Activity, Server, Briefcase } from "lucide-react";
 import { LanguageCode } from "../types";
 import { translations } from "../translations";
+import { experienceData } from "../experienceData";
 
 interface Props {
   language: LanguageCode;
@@ -13,28 +14,25 @@ export default function Experience({ language, isDark }: Props) {
   const t = translations[language];
   const [activeJob, setActiveJob] = useState<number>(0);
 
-  const jobs = [
-    {
-      id: 0,
-      title: t.experienceJob1Title,
-      company: t.experienceJob1Company,
-      date: t.experienceJob1Date,
-      points: t.experienceJob1Points,
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Agile", "Asana"],
-      icon: <Milestone className="h-5 w-5 text-[#00FFCC]" />,
-      stats: { output: "+40% Delivery", security: "W3C Compliant", tickets: "84 Sprints" }
-    },
-    {
-      id: 1,
-      title: t.experienceJob2Title,
-      company: t.experienceJob2Company,
-      date: t.experienceJob2Date,
-      points: t.experienceJob2Points,
-      skills: ["AI Assistants", "Node.js", "Express", "LLM Pipelines", "API Design", "JSON Schema"],
-      icon: <Star className="h-5 w-5 text-purple-400" />,
-      stats: { output: "Custom LLMs", security: "TLS Encryption", tickets: "22 pipelines" }
-    }
-  ];
+  const iconClass = "h-5 w-5";
+  const iconByKey = {
+    briefcase: <Briefcase className={`${iconClass} text-[#00FFCC]`} />,
+    star: <Star className={`${iconClass} text-purple-400`} />,
+    milestone: <Milestone className={`${iconClass} text-[#00FFCC]`} />,
+    server: <Server className={`${iconClass} text-cyan-400`} />,
+    layers: <Layers className={`${iconClass} text-emerald-400`} />,
+  } as const;
+
+  const jobs = experienceData.map((entry, id) => ({
+    id,
+    title: entry.role[language],
+    company: `${entry.company} · ${entry.location[language]}`,
+    date: entry.period[language],
+    points: entry.points[language],
+    skills: entry.skills,
+    icon: iconByKey[entry.icon],
+    stats: entry.stats,
+  }));
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();

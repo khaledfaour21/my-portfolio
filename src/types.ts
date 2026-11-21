@@ -165,6 +165,7 @@ export interface Translatables {
   workBackCaseStudy: string;
   workNotFound: string;
   workPortfolioNav: string;
+  projectComingSoon: string;
 }
 
 export interface ProjectType {
@@ -179,6 +180,7 @@ export interface ProjectType {
   workRoute?: string;
   images?: string[];
   highlights?: Record<LanguageCode, string[]>;
+  comingSoon?: boolean;
 }
 
 export interface ExperienceType {

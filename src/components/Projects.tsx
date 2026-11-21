@@ -31,7 +31,7 @@ export default function Projects({ language, isDark }: Props) {
   };
 
   const deployedProjects = projectsData.filter(
-    (p) => p.isLive && p.id !== "datascience-10x",
+    (p) => (p.isLive || p.comingSoon) && p.id !== "datascience-10x",
   );
   const localProjects = projectsData.filter((p) => !p.isLive && p.workRoute);
 
@@ -140,11 +140,22 @@ export default function Projects({ language, isDark }: Props) {
                   <div>
                     {/* Launch Banner Header */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-8 border-b border-white/[0.05] pb-6">
-                      <h3 className={`font-display text-2xl sm:text-3xl font-black tracking-tight leading-none ${
-                        isDark ? "text-white" : "text-slate-900"
-                      }`}>
-                        {p.title}
-                      </h3>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className={`font-display text-2xl sm:text-3xl font-black tracking-tight leading-none ${
+                          isDark ? "text-white" : "text-slate-900"
+                        }`}>
+                          {p.title}
+                        </h3>
+                        {p.comingSoon && (
+                          <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-mono font-black uppercase tracking-widest border ${
+                            isDark
+                              ? "border-amber-400/40 bg-amber-400/10 text-amber-300"
+                              : "border-amber-300 bg-amber-50 text-amber-800"
+                          }`}>
+                            {t.projectComingSoon}
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2.5">
                         {p.githubUrl && (
                           <motion.a
@@ -163,7 +174,7 @@ export default function Projects({ language, isDark }: Props) {
                             <span>CODE</span>
                           </motion.a>
                         )}
-                        {p.liveUrl && (
+                        {p.liveUrl && !p.comingSoon && (
                           <motion.a
                             whileHover={{ scale: 1.05, y: -1 }}
                             whileTap={{ scale: 0.95 }}

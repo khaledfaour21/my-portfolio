@@ -73,6 +73,56 @@ export const projectsData: ProjectType[] = [
     }
   },
   {
+    id: "osa",
+    title: "OSA",
+    comingSoon: true,
+    isLive: false,
+    description: {
+      en: "OSA — a product I am actively engineering. Full case study and live demo will ship on this portfolio soon.",
+      ar: "مشروع OSA — قيد التطوير حالياً. سأنشر شرح المشروع والديمو هنا قريباً على البورتفوليو.",
+      de: "OSA — aktuell in Entwicklung. Case Study und Demo folgen bald im Portfolio.",
+      nl: "OSA — in actieve ontwikkeling. Case study en demo volgen binnenkort op het portfolio."
+    },
+    longDescription: {
+      en: "Stack, architecture, and recruiter-friendly walkthrough are being prepared. Status: in progress — badge «Coming soon» until launch.",
+      ar: "أجهّز البنية التقنية وصفحة الشرح المناسبة للمديرين. الحالة: قيد العمل — شارة «قريباً» حتى الإطلاق.",
+      de: "Architektur und Walkthrough werden vorbereitet. Status: in Arbeit.",
+      nl: "Architectuur en walkthrough worden voorbereid. Status: in uitvoering."
+    },
+    tech: ["React", "TypeScript", "Full-Stack", "UX", "In progress"],
+    highlights: {
+      en: ["Active build — portfolio release soon", "Case study + embedded demo planned", "Engineer: Khaled Faour"],
+      ar: ["بناء نشط — إطلاق على البورتفوليو قريباً", "صفحة شرح + ديمو مدمج مخطط", "المهندس خالد فاعور"],
+      de: ["Aktiver Build — Portfolio-Release bald", "Case Study + Demo geplant", "Khaled Faour"],
+      nl: ["Actieve build — portfolio-release binnenkort", "Case study + demo gepland", "Khaled Faour"]
+    }
+  },
+  {
+    id: "vapeworld-eshop",
+    title: "Vapeworld E-Store",
+    comingSoon: true,
+    isLive: false,
+    description: {
+      en: "Next-generation mobile e-store for Vapeworld — catalog, checkout, and native-feel shopping (in development).",
+      ar: "متجر إلكتروني جديد (موبايل) لـ Vapeworld — كتالوج، شراء، وتجربة تسوق سلسة (قيد التطوير).",
+      de: "Neuer Mobile E-Shop für Vapeworld — Katalog und Checkout (in Entwicklung).",
+      nl: "Nieuwe mobiele e-store voor Vapeworld — catalogus en checkout (in ontwikkeling)."
+    },
+    longDescription: {
+      en: "Complements the live vapeworld-sy.com site with a dedicated mobile commerce layer. Demo will appear here when ready.",
+      ar: "يكمل الموقع الحي vapeworld-sy.com بطبقة تجارة مخصصة للجوال. سيظهر الديمو هنا عند الجاهزية.",
+      de: "Ergänzt die Live-Site mit einer Mobile-Commerce-Schicht. Demo folgt hier.",
+      nl: "Vult de live site aan met een mobiele commerce-laag. Demo volgt hier."
+    },
+    tech: ["Next.js", "React Native / PWA", "E-Commerce", "i18n", "Payments"],
+    highlights: {
+      en: ["Mobile-first storefront", "Pairs with live Vapeworld Syria site", "Coming soon on portfolio"],
+      ar: ["واجهة متجر موجهة للجوال", "مكمل لموقع Vapeworld Syria الحي", "قريباً على البورتفوليو"],
+      de: ["Mobile-first Shop", "Ergänzt Live-Site", "Demnächst im Portfolio"],
+      nl: ["Mobile-first storefront", "Bij live Vapeworld-site", "Binnenkort op portfolio"]
+    }
+  },
+  {
     id: "datascience-10x",
     title: "DataScience-10x",
     description: {
