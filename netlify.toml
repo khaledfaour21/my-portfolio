@@ -5,6 +5,8 @@
 [build.environment]
   VITE_EMENU_DEMO_URL = "https://amohamed.vercel.app"
   VITE_SCHOOL_DEMO_URL = "https://school-erp-portfolio.vercel.app"
+  # Set in Netlify UI after Google Search Console → HTML tag verification:
+  # VITE_GOOGLE_SITE_VERIFICATION = "your_token_here"
 
 [[redirects]]
   from = "/*"

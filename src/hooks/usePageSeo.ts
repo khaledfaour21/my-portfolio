@@ -97,6 +97,11 @@ export function usePageSeo({ language, pathname, projectId }: PageSeoInput) {
         : "index, follow, max-image-preview:large";
     upsertMeta("name", "robots", robotsDirective);
     upsertMeta("name", "googlebot", "index, follow");
+
+    const gscToken = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION;
+    if (gscToken) {
+      upsertMeta("name", "google-site-verification", gscToken);
+    }
     upsertMeta("name", "bingbot", "index, follow");
 
     upsertMeta("property", "og:site_name", "Khaled Faour Portfolio");

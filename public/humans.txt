@@ -1,0 +1,8 @@
+/* TEAM */
+Developer: Khaled Faour (خالد فاعور)
+Site: https://khaled-faour.com
+Location: Aleppo, Syria
+Contact: khaledfaour718@gmail.com
+
+/* THANKS */
+Google Search Console, IndexNow, Open Graph, schema.org
