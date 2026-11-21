@@ -35,7 +35,7 @@ export const PERSON = {
   ],
 } as const;
 
-export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/work-assets/school-logo.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/work-assets/og-image.png`;
 
 export const SITEMAP_PATHS = [
   "/",

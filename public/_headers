@@ -13,3 +13,6 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+
+/demos/*
+  X-Robots-Tag: noindex, nofollow
