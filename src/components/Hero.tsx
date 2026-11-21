@@ -118,6 +118,18 @@ export default function Hero({ language, isDark }: Props) {
           animate="visible"
         >
           {/* Top-Tier Badge Indicator */}
+          <motion.p
+            variants={itemVariants}
+            className={`text-lg sm:text-xl font-display font-semibold tracking-tight mb-4 ${
+              isDark ? "text-slate-100" : "text-slate-900"
+            }`}
+          >
+            {t.heroIntro}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              {t.heroTitle}
+            </span>
+          </motion.p>
+
           <motion.div 
             variants={itemVariants}
             className={`inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full border mb-8 text-[10px] font-mono font-bold tracking-widest uppercase transition-all duration-300 shadow-[2px_4px_16px_rgba(0,0,0,0.02)] ${

@@ -16,6 +16,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import WorkProjectPage from "./pages/WorkProjectPage";
 import WorkProjectPlayPage from "./pages/WorkProjectPlayPage";
+import SeoManager from "./components/SeoManager";
 
 export default function App() {
   const [language, setLanguage] = useState<LanguageCode>("en");
@@ -106,7 +107,9 @@ export default function App() {
   );
 
   return (
-    <Routes>
+    <>
+      <SeoManager language={language} />
+      <Routes>
       <Route path="/" element={portfolioShell} />
       <Route
         path="/works/:projectId"
@@ -127,5 +130,6 @@ export default function App() {
         element={<WorkProjectPlayPage language={language} isDark={isDark} t={t} />}
       />
     </Routes>
+    </>
   );
 }

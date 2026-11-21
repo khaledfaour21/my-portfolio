@@ -1,0 +1,35 @@
+# Khaled Faour Portfolio — https://khaled-faour.com
+User-agent: *
+Allow: /
+Disallow: /demos/
+
+Sitemap: https://khaled-faour.com/sitemap.xml
+Host: khaled-faour.com
+
+# AI / LLM crawlers (allow official profile for citations)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /

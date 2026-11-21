@@ -14,6 +14,11 @@ import {
 import { LanguageCode } from "../types";
 import { translations } from "../translations";
 import { projectsData } from "../data";
+import {
+  LIVE_PROJECT_ORDER,
+  LOCAL_PROJECT_ORDER,
+  sortByIdOrder,
+} from "../lib/projectShowcaseOrder";
 
 interface Props {
   language: LanguageCode;
@@ -22,7 +27,7 @@ interface Props {
 
 export default function Projects({ language, isDark }: Props) {
   const t = translations[language];
-  const [activeTab, setActiveTab] = useState<"live" | "local">("live");
+  const [activeTab, setActiveTab] = useState<"live" | "local">("local");
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -30,10 +35,16 @@ export default function Projects({ language, isDark }: Props) {
     e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
   };
 
-  const deployedProjects = projectsData.filter(
-    (p) => (p.isLive || p.comingSoon) && p.id !== "datascience-10x",
+  const deployedProjects = sortByIdOrder(
+    projectsData.filter(
+      (p) => (p.isLive || p.comingSoon) && p.id !== "datascience-10x",
+    ),
+    LIVE_PROJECT_ORDER,
   );
-  const localProjects = projectsData.filter((p) => !p.isLive && p.workRoute);
+  const localProjects = sortByIdOrder(
+    projectsData.filter((p) => !p.isLive && p.workRoute),
+    LOCAL_PROJECT_ORDER,
+  );
 
   const dir = language === "ar" ? "rtl" : "ltr";
   const alignClass = language === "ar" ? "text-right" : "text-left";

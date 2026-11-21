@@ -73,6 +73,40 @@ export const projectsData: ProjectType[] = [
     }
   },
   {
+    id: "mbco-test-orders",
+    title: "MBCO Pack — Test Orders",
+    description: {
+      en: "Live test deployment for MBCO Pack: RTL carton / corrugated order flows (Vercel + Upstash Redis).",
+      ar: "نسخة اختبار حية لطلبات MBCO Pack: طلبات الكرتون والمضلّع (Vercel + Upstash Redis).",
+      de: "Live-Test: MBCO Pack Bestellsystem (Vercel + Redis).",
+      nl: "Live test: MBCO Pack bestellingen (Vercel + Redis)."
+    },
+    longDescription: {
+      en: "Production-style order portal for MBCO Pack packaging — separate from the embedded attendance PWA demo. Engineer Khaled Faour.",
+      ar: "بوابة طلبات إنتاج لشركة MBCO Pack للتغليف — منفصلة عن ديمو تطبيق الدوام المدمج. المهندس خالد فاعور.",
+      de: "Bestellportal für MBCO Pack — getrennt von der Attendance-PWA-Demo.",
+      nl: "Bestelportaal voor MBCO Pack — apart van de attendance-PWA-demo."
+    },
+    tech: ["Next.js", "React", "TypeScript", "Upstash Redis", "RTL", "Vercel"],
+    isLive: true,
+    liveUrl: "https://mbcopack-test-orders.vercel.app",
+    images: ["/work-assets/mbco-logo.png"],
+    highlights: {
+      en: [
+        "RTL Arabic order UX",
+        "Live on mbcopack-test-orders.vercel.app",
+        "Redis-backed test environment"
+      ],
+      ar: [
+        "واجهة طلبات عربية RTL",
+        "منشور على mbcopack-test-orders.vercel.app",
+        "بيئة اختبار مع Redis"
+      ],
+      de: ["RTL-Bestell-UX", "Live auf Vercel", "Redis"],
+      nl: ["RTL-bestel-UX", "Live op Vercel", "Redis"]
+    }
+  },
+  {
     id: "osa",
     title: "OSA",
     comingSoon: true,
