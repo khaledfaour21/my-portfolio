@@ -41,7 +41,7 @@ function resolveDemoUrl(
 }
 
 /** Vite `define` — optional baked defaults when env + demo-hosts.json are empty. */
-const BAKED_SCHOOL = "";
+const BAKED_SCHOOL = "https://school-erp-portfolio.vercel.app";
 const BAKED_EMENU = "https://amohamed.vercel.app";
 
 export function getSchoolDemoUrl(): string {

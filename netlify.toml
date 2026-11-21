@@ -4,6 +4,7 @@
 
 [build.environment]
   VITE_EMENU_DEMO_URL = "https://amohamed.vercel.app"
+  VITE_SCHOOL_DEMO_URL = "https://school-erp-portfolio.vercel.app"
 
 [[redirects]]
   from = "/*"
