@@ -170,6 +170,9 @@ export const translations: Record<LanguageCode, Translatables> = {
     workNotFound: "Project not found.",
     workPortfolioNav: "Portfolio",
     projectComingSoon: "Coming soon",
+    workDemoRedirecting:
+      "Opening the School ERP demo in a full window (secure sign-in cannot run inside an embedded frame).",
+    workDemoOpenManual: "Open demo manually",
 
     navSelectRegion: "Select Region",
     currentLangLabel: "Current Language",
@@ -340,6 +343,9 @@ export const translations: Record<LanguageCode, Translatables> = {
     workNotFound: "المشروع غير موجود.",
     workPortfolioNav: "البورتفوليو",
     projectComingSoon: "قريباً",
+    workDemoRedirecting:
+      "جاري فتح ديمو المدرسة في نافذة كاملة — تسجيل Clerk لا يعمل داخل إطار مضمّن على الموقع الحي.",
+    workDemoOpenManual: "افتح الديمو يدوياً",
 
     navSelectRegion: "اختر المنطقة واللغة",
     currentLangLabel: "اللغة المحددة حالياً",
@@ -368,6 +374,8 @@ export const translations: Record<LanguageCode, Translatables> = {
     workNotFound: "Projekt nicht gefunden.",
     workPortfolioNav: "Portfolio",
     projectComingSoon: "Demnächst",
+    workDemoRedirecting: "Demo wird im Vollbild geöffnet (Clerk-Auth funktioniert nicht in iframes).",
+    workDemoOpenManual: "Demo manuell öffnen",
     heroCtaContact: "Kontaktieren",
     aboutTitle: "Der Architekt",
     aboutRole: "Präzisions-Engineering gekoppelt mit Management-Visionen",
@@ -538,6 +546,8 @@ export const translations: Record<LanguageCode, Translatables> = {
     workNotFound: "Projekt nicht gefunden.",
     workPortfolioNav: "Portfolio",
     projectComingSoon: "Binnenkort",
+    workDemoRedirecting: "Demo opent in volledig venster (Clerk-auth werkt niet in iframes).",
+    workDemoOpenManual: "Demo handmatig openen",
     heroCtaContact: "Neem Contact Op",
     aboutTitle: "De Architect",
     aboutRole: "Samenwerking van High-End Engineering met Executive Leiderschap",

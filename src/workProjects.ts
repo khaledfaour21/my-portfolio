@@ -23,6 +23,8 @@ export interface WorkProjectMeta {
   logo: string;
   gallery: string[];
   demoKind: "iframe" | "embedded";
+  /** Clerk-backed demos must open top-level (not iframe) to avoid auth redirect loops. */
+  demoPresentation?: "iframe" | "embedded" | "redirect";
   demoSrc?: string;
   demoPath?: string;
   demoHints?: Record<LanguageCode, string[]>;
@@ -34,6 +36,15 @@ export function resolveDemoUrl(project: WorkProjectMeta): string | undefined {
   if (project.id === "school-erp") return portfolioDemoUrls.school;
   if (project.id === "e-menu") return portfolioDemoUrls.emenu;
   return project.demoSrc;
+}
+
+export type DemoPresentation = "iframe" | "embedded" | "redirect";
+
+export function getDemoPresentation(project: WorkProjectMeta): DemoPresentation {
+  if (project.demoPresentation) return project.demoPresentation;
+  if (project.demoKind === "embedded") return "embedded";
+  if (project.id === "school-erp") return "redirect";
+  return "iframe";
 }
 
 const credit: Record<LanguageCode, string> = {
@@ -103,17 +114,18 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
       "/work-assets/school-ui.png",
     ],
     demoKind: "iframe",
+    demoPresentation: "redirect",
     demoSrc: portfolioDemoUrls.school,
     demoHints: {
       en: [
-        "School ERP on port 3001 — in-browser demo data (no MySQL required).",
+        "Opens in a full browser window (required for Clerk auth — not inside an iframe).",
         "One-click demo login: Admin / Teacher / Student / Parent.",
-        "Edits in demo mode stay in memory until server restart.",
+        "Demo data runs in memory when PORTFOLIO_DEMO is enabled on the host.",
       ],
       ar: [
-        "المدرسة على المنفذ 3001 — بيانات ديمو داخل الذاكرة (بدون MySQL).",
+        "يفتح الديمو في نافذة كاملة (Clerk لا يعمل داخل iframe على الموقع المنشور).",
         "دخول تجريبي بضغطة واحدة: مدير، معلم، طالب، ولي أمر.",
-        "التعديلات تبقى في الذاكرة حتى إعادة تشغيل السيرفر.",
+        "بيانات الديمو في الذاكرة عند تفعيل وضع المعرض على السيرفر.",
       ],
       de: ["Port 3001", "Demo-Login-Buttons"],
       nl: ["Poort 3001", "Demo-loginknoppen"],

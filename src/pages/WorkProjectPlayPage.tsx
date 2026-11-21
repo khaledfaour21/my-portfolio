@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, Maximize2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, Maximize2 } from "lucide-react";
 import { LanguageCode, Translatables } from "../types";
-import { workProjects, WorkProjectId, resolveDemoUrl } from "../workProjects";
+import {
+  workProjects,
+  WorkProjectId,
+  resolveDemoUrl,
+  getDemoPresentation,
+} from "../workProjects";
 
 interface Props {
   language: LanguageCode;
@@ -15,6 +21,17 @@ export default function WorkProjectPlayPage({ language, isDark, t }: Props) {
   const project = workProjects[id];
   const dir = language === "ar" ? "rtl" : "ltr";
 
+  const demoUrl = project ? resolveDemoUrl(project) : undefined;
+  const presentation = project ? getDemoPresentation(project) : "iframe";
+
+  useEffect(() => {
+    if (!demoUrl || presentation !== "redirect") return;
+    const timer = window.setTimeout(() => {
+      window.location.replace(demoUrl);
+    }, 400);
+    return () => window.clearTimeout(timer);
+  }, [demoUrl, presentation]);
+
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center p-8">
@@ -26,8 +43,40 @@ export default function WorkProjectPlayPage({ language, isDark, t }: Props) {
     );
   }
 
-  const demoUrl = resolveDemoUrl(project);
   const title = project.title[language];
+
+  if (presentation === "redirect") {
+    return (
+      <div
+        dir={dir}
+        className={`min-h-screen flex flex-col items-center justify-center p-8 text-center ${
+          isDark ? "bg-black text-slate-100" : "bg-slate-100 text-slate-900"
+        }`}
+      >
+        <Maximize2 className="h-10 w-10 text-emerald-400 mb-6" />
+        <h1 className="text-xl font-bold mb-3 max-w-lg">{title}</h1>
+        <p className="text-sm opacity-80 max-w-md mb-8 leading-relaxed">{t.workDemoRedirecting}</p>
+        {demoUrl ? (
+          <a
+            href={demoUrl}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-emerald-400"
+          >
+            <ExternalLink className="h-4 w-4" />
+            {t.workDemoOpenManual}
+          </a>
+        ) : (
+          <p className="opacity-70">{t.workDemoUnavailable}</p>
+        )}
+        <Link
+          to={`/works/${id}`}
+          className="mt-8 text-xs font-mono text-emerald-500 hover:text-emerald-400 inline-flex items-center gap-2"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          {t.workBackCaseStudy}
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div

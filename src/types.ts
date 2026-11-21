@@ -166,6 +166,8 @@ export interface Translatables {
   workNotFound: string;
   workPortfolioNav: string;
   projectComingSoon: string;
+  workDemoRedirecting: string;
+  workDemoOpenManual: string;
 }
 
 export interface ProjectType {
