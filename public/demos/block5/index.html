@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة الشكاوى والمبادرات | إدارة الكتلة الخامسة</title>
+    <link rel="icon" type="image/svg+xml" href="/demos/block5/assets/logo-Dmh5WLp_.svg" />
+
+    <!-- Local Fonts -->
+    <style>
+      @font-face {
+        font-family: "itfQomraArabic";
+        src:
+          url("/demos/block5/assets/itfQomraArabic-Light-CCqsBatq.woff2")
+            format("woff2"),
+          url("/demos/block5/assets/itfQomraArabic-Light-DEbONh5w.woff")
+            format("woff"),
+          url("/demos/block5/assets/itfQomraArabic-Light-CGXtNMh3.ttf")
+            format("truetype");
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itfQomraArabic";
+        src:
+          url("/demos/block5/assets/itfQomraArabic-Regular-oQsKyV1H.woff2")
+            format("woff2"),
+          url("/demos/block5/assets/itfQomraArabic-Regular-DV1L9-98.woff")
+            format("woff"),
+          url("/demos/block5/assets/itfQomraArabic-Regular-DMQK3PBH.ttf")
+            format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itfQomraArabic";
+        src:
+          url("/demos/block5/assets/itfQomraArabic-Medium-d5V8Qw5X.woff2")
+            format("woff2"),
+          url("/demos/block5/assets/itfQomraArabic-Medium-B9vUMrgd.woff")
+            format("woff"),
+          url("/demos/block5/assets/itfQomraArabic-Medium-DsuTHNWE.ttf")
+            format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itfQomraArabic";
+        src:
+          url("/demos/block5/assets/itfQomraArabic-Bold-dWd-J3xX.woff2")
+            format("woff2"),
+          url("/demos/block5/assets/itfQomraArabic-Bold-DLZVEZlK.woff")
+            format("woff"),
+          url("/demos/block5/assets/itfQomraArabic-Bold-Bp554cqw.ttf")
+            format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itfQomraArabic";
+        src:
+          url("/demos/block5/assets/itfQomraArabic-Black-8NKT09f1.woff2")
+            format("woff2"),
+          url("/demos/block5/assets/itfQomraArabic-Black-Br-Nftep.woff")
+            format("woff"),
+          url("/demos/block5/assets/itfQomraArabic-Black-C7qYXzEt.ttf")
+            format("truetype");
+        font-weight: 900;
+        font-style: normal;
+      }
+    </style>
+
+    <!-- Tailwind CSS & DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["itfQomraArabic", "ui-sans-serif", "system-ui"],
+              cairo: ["itfQomraArabic", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                lightBg: "#edebe0",
+                darkBg: "#161616",
+                primary: "#002623",
+                accent: "#988561",
+                secondary: "#260f14",
+                alert: "#6b1f2a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script type="module" crossorigin src="/demos/block5/assets/index-Dadxz7G1.js"></script>
+  </head>
+
+  <body
+    class="bg-brand-lightBg dark:bg-brand-darkBg text-brand-secondary dark:text-brand-lightBg transition-colors duration-300"
+  >
+    <div id="root"></div>
+  </body>
+</html>

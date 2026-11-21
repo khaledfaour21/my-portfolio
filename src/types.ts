@@ -165,6 +165,7 @@ export interface ProjectType {
   isLive: boolean;
   liveUrl?: string;
   githubUrl?: string;
+  workRoute?: string;
   images?: string[];
   highlights?: Record<LanguageCode, string[]>;
 }

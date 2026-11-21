@@ -24,12 +24,11 @@ export const projectsData: ProjectType[] = [
     tech: ["React.js", "TypeScript", "Tailwind CSS", "Motion", "REST APIs", "PDF Generation"],
     isLive: true,
     liveUrl: "https://primetransporter.de",
-    githubUrl: "https://github.com/khaledfaour21/prime-transporter",
     highlights: {
       en: [
         "Sleek Multilingual Stepper booking module",
         "Sub-100ms Server Side Rendering speed",
-        "Fully fully fluid custom glassmorphic dashboards"
+        "Fully fluid custom glassmorphic dashboards"
       ],
       ar: [
         "نظام حجز ذكي ومحكم متعدد الخطوات واللغات",
@@ -49,6 +48,31 @@ export const projectsData: ProjectType[] = [
     }
   },
   {
+    id: "vapeworld-sy",
+    title: "Vapeworld Syria",
+    description: {
+      en: "Full-stack e-commerce experience for Vapeworld Syria — catalog, localization, and production storefront.",
+      ar: "متجر إلكتروني متكامل (Full-Stack) لـ Vapeworld Syria — كتالوج، تعدد لغات، وواجهة إنتاج.",
+      de: "Full-Stack-E-Commerce für Vapeworld Syrien.",
+      nl: "Full-stack e-commerce voor Vapeworld Syria."
+    },
+    longDescription: {
+      en: "Engineered and maintained the complete customer-facing platform with performance-focused UI, bilingual routing, and secure checkout flows. Live deployment without public source exposure.",
+      ar: "تطوير وصيانة المنصة الكاملة للعملاء مع واجهات عالية الأداء، مسارات ثنائية اللغة، ودفع آمن — نشر حي بدون كشف السورس.",
+      de: "Komplette Kundenplattform — Performance-UI, Mehrsprachigkeit.",
+      nl: "Volledige klantplatform — performante UI, meertalig."
+    },
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "E-Commerce", "i18n"],
+    isLive: true,
+    liveUrl: "https://www.vapeworld-sy.com/en",
+    highlights: {
+      en: ["Production storefront (EN/AR)", "Catalog & product UX", "Engineer Khaled Faour — full stack"],
+      ar: ["متجر إنتاج (عربي/إنجليزي)", "كتالوج وتجربة منتجات", "المهندس خالد فاعور — تطوير كامل"],
+      de: ["Live-Shop", "Katalog-UX", "Full-Stack durch Khaled Faour"],
+      nl: ["Live winkel", "Catalogus-UX", "Full-stack door Khaled Faour"]
+    }
+  },
+  {
     id: "datascience-10x",
     title: "DataScience-10x",
     description: {
@@ -65,8 +89,7 @@ export const projectsData: ProjectType[] = [
     },
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Agile Sprints", "Asana Pipelines"],
     isLive: true,
-    liveUrl: "https://datascience10x.com", // Reference portfolio link placeholder
-    githubUrl: "https://github.com/khaledfaour21/datascience-10x",
+    liveUrl: "https://datascience10x.com",
     highlights: {
       en: [
         "Responsive Cohort Admin panel with students metrics",
@@ -91,6 +114,56 @@ export const projectsData: ProjectType[] = [
     }
   },
   {
+    id: "e-menu",
+    title: "K.Faour E-Menu",
+    description: {
+      en: "Luxury restaurant e-menu with full admin CMS, branches, hero media, and cart/WhatsApp flows.",
+      ar: "منيو مطعم إلكتروني فاخر مع لوحة تحكم كاملة، فروع، وسائط، وسلة وواتساب.",
+      de: "Premium Restaurant-E-Menü mit Admin-CMS.",
+      nl: "Premium restaurant e-menu met admin-CMS."
+    },
+    longDescription: {
+      en: "Next.js production stack with local or Supabase backends. Portfolio demo uses sealed local mock data — Engineer Khaled Faour.",
+      ar: "مكدس Next.js جاهز للإنتاج مع باكند محلي أو Supabase. الديمو يستخدم بيانات وهمية محلية — المهندس خالد فاعور.",
+      de: "Next.js-Produktion mit lokalem Demo-Backend.",
+      nl: "Next.js-productie met lokale demo-data."
+    },
+    tech: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Local JSON", "PWA"],
+    isLive: false,
+    workRoute: "/works/e-menu",
+    highlights: {
+      en: ["Guest UX + admin CMS", "Multi-branch catalog", "Image compression pipeline"],
+      ar: ["تجربة ضيف + لوحة أدمن", "كتالوج متعدد الفروع", "ضغط وإدارة الصور"],
+      de: ["Gast + Admin", "Filialen", "Bilder"],
+      nl: ["Gast + admin", "Filialen", "Beelden"]
+    }
+  },
+  {
+    id: "mbco-pack",
+    title: "MBCO PACK Attendance",
+    description: {
+      en: "Internal PWA for leave requests, attendance, overtime, schedules, and manager approvals.",
+      ar: "تطبيق PWA داخلي للإجازات والدوام والإضافي والجداول وموافقات المدير.",
+      de: "Interne PWA für Anwesenheit und Urlaub.",
+      nl: "Interne PWA voor verlof en aanwezigheid."
+    },
+    longDescription: {
+      en: "Vite + Supabase in production; portfolio ships a self-contained demo bundle with seeded HR data.",
+      ar: "Vite + Supabase في الإنتاج؛ المعرض يعرض حزمة ديمو مستقلة ببيانات تجريبية.",
+      de: "Vite + eingebettete Demo.",
+      nl: "Vite + ingebedde demo."
+    },
+    tech: ["React", "Vite", "TypeScript", "PWA", "Supabase", "Excel/PDF"],
+    isLive: false,
+    workRoute: "/works/mbco-pack",
+    highlights: {
+      en: ["Manager + employee roles", "Weekly attendance grids", "Export PDF & Excel"],
+      ar: ["أدوار مدير وموظف", "جداول حضور أسبوعية", "تصدير PDF و Excel"],
+      de: ["Rollen", "Wochenraster", "Export"],
+      nl: ["Rollen", "Wekraster", "Export"]
+    }
+  },
+  {
     id: "school-management",
     title: "School Management System",
     description: {
@@ -105,9 +178,9 @@ export const projectsData: ProjectType[] = [
       de: "Speziell entwickelt zur Digitalisierung manueller Prozesse im Schulwesen. Rollenbasierte Zugriffsebenen für Administratoren, Lehrer (Noteneingabe, Stundenpläne), Schüler (Hausaufgaben, Zeugnisse) und Eltern (Finanzübersicht & Leistungsüberwachung).",
       nl: "Speciaal ontworpen om handmatige processen in schoolomgevingen te digitaliseren. Op rollen gebaseerde toegangsniveaus voor beheerders, leraren (cijferinvoer, roosters), studenten (huiswerk, rapporten) en ouders (financieel overzicht & prestatiemonitoring)."
     },
-    tech: ["React.js", "C# .NET Core", "SQL Server", "Role-Based Security", "Prisma ORM", "Tailwind CSS"],
+    tech: ["Next.js 15", "React", "TypeScript", "Prisma", "Clerk", "Tailwind CSS", "MySQL"],
     isLive: false,
-    images: ["admin_dash", "teacher_grading", "student_portal", "parent_billing"],
+    workRoute: "/works/school-erp",
     highlights: {
       en: [
         "Comprehensive 4-tier isolated security access",
@@ -146,9 +219,9 @@ export const projectsData: ProjectType[] = [
       de: "Als Mitbegründer entwickelt, um den Kommunikationskanal zwischen Bürgern und lokalen Komitees zu optimieren. Mit geographischer Verortung von Mängeln, Abstimmungsmodulen für Bürgerinitiativen und interaktiven Status-Dashboards.",
       nl: "Mede-opgericht en ontwikkeld om de communicatie tussen burgers en lokale comités te digitaliseren. Uitgerust met geografische locatiebepaling, stemmodules voor burgerinitiatieven en interactieve statusdashboards."
     },
-    tech: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Geocoding", "Interactive Maps"],
+    tech: ["React 19", "Vite", "Express 5", "PostgreSQL", "Prisma", "Zustand"],
     isLive: false,
-    images: ["citizen_submit", "public_feed", "admin_map", "analytics_chart"],
+    workRoute: "/works/block5-aleppo",
     highlights: {
       en: [
         "Geocoded coordinate pinpointing for infrastructure issues",

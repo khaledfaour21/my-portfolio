@@ -43,13 +43,13 @@ export default function ThemeLanguageControls({ language, setLanguage, isDark, s
 
   const triggerDownload = () => {
     const resumeText = `
-KHALED FAOUR - Informatics/Communications Engineer & MBA Candidate
+KHALED FAOUR - Informatics Engineer & MBA Candidate
 Email: khaledfaour718@gmail.com | Phone: +963 938 796 079
 Aleppo, Syria | GitHub: https://github.com/khaledfaour21 | LinkedIn: https://www.linkedin.com/in/khaled-faour-eng
 
 EDUCATION:
 - Master of Business Administration (SVU) | 2025 - 2027
-- Bachelor in Informatics & Communications Engineering (EPU) | 2020 - 2025
+- Bachelor in Informatics Engineering (EPU) | 2020 - 2025
 
 EXPERIENCE:
 - Frontend Developer Intern (AI Solutions, Russia - Remote) | 6 Months
