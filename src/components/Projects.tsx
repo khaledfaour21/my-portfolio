@@ -1,5 +1,6 @@
 import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { PortfolioImage } from "./PortfolioImage";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ExternalLink,
@@ -247,6 +248,15 @@ export default function Projects({ language, isDark }: Props) {
                       : "glass-panel-light border-slate-200/90 hover:border-emerald-400"
                   }`}
                 >
+                  {p.images?.[0] && (
+                    <PortfolioImage
+                      src={p.images[0]}
+                      alt=""
+                      variant="logo"
+                      isDark={isDark}
+                      className="portfolio-card-logo-frame"
+                    />
+                  )}
                   <h3 className={`font-display text-2xl sm:text-3xl font-black mb-4 ${
                     isDark ? "text-white" : "text-slate-900"
                   }`}>

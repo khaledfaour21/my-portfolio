@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="صورة طعام">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8EE"/>
+      <stop offset="100%" stop-color="#F5EADF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="56" fill="#C81D11" fill-opacity="0.08"/>
+  <circle cx="200" cy="150" r="36" fill="#1800C8" fill-opacity="0.08"/>
+  <path d="M188 165c0-7 5-12 12-12s12 5 12 12v6h-24v-6z" fill="#C81D11" fill-opacity="0.25"/>
+</svg>

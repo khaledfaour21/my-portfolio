@@ -154,6 +154,17 @@ export interface Translatables {
   currentLangLabel: string;
   navThemeBright: string;
   navThemeDark: string;
+
+  workBackPortfolio: string;
+  workHighlights: string;
+  workGallery: string;
+  workDemoGuide: string;
+  workSecureDemo: string;
+  workLaunchFullscreen: string;
+  workDemoUnavailable: string;
+  workBackCaseStudy: string;
+  workNotFound: string;
+  workPortfolioNav: string;
 }
 
 export interface ProjectType {

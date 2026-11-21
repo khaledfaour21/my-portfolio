@@ -131,6 +131,7 @@ export const projectsData: ProjectType[] = [
     tech: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Local JSON", "PWA"],
     isLive: false,
     workRoute: "/works/e-menu",
+    images: ["/work-assets/emenu-logo.png"],
     highlights: {
       en: ["Guest UX + admin CMS", "Multi-branch catalog", "Image compression pipeline"],
       ar: ["تجربة ضيف + لوحة أدمن", "كتالوج متعدد الفروع", "ضغط وإدارة الصور"],
@@ -156,6 +157,7 @@ export const projectsData: ProjectType[] = [
     tech: ["React", "Vite", "TypeScript", "PWA", "Supabase", "Excel/PDF"],
     isLive: false,
     workRoute: "/works/mbco-pack",
+    images: ["/work-assets/mbco-logo.png"],
     highlights: {
       en: ["Manager + employee roles", "Weekly attendance grids", "Export PDF & Excel"],
       ar: ["أدوار مدير وموظف", "جداول حضور أسبوعية", "تصدير PDF و Excel"],
@@ -181,6 +183,7 @@ export const projectsData: ProjectType[] = [
     tech: ["Next.js 15", "React", "TypeScript", "Prisma", "Clerk", "Tailwind CSS", "MySQL"],
     isLive: false,
     workRoute: "/works/school-erp",
+    images: ["/work-assets/school-logo.png"],
     highlights: {
       en: [
         "Comprehensive 4-tier isolated security access",
@@ -222,6 +225,7 @@ export const projectsData: ProjectType[] = [
     tech: ["React 19", "Vite", "Express 5", "PostgreSQL", "Prisma", "Zustand"],
     isLive: false,
     workRoute: "/works/block5-aleppo",
+    images: ["/work-assets/block5-logo.svg"],
     highlights: {
       en: [
         "Geocoded coordinate pinpointing for infrastructure issues",

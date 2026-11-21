@@ -15,6 +15,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import WorkProjectPage from "./pages/WorkProjectPage";
+import WorkProjectPlayPage from "./pages/WorkProjectPlayPage";
 
 export default function App() {
   const [language, setLanguage] = useState<LanguageCode>("en");
@@ -117,9 +118,13 @@ export default function App() {
               isDark={isDark}
               setIsDark={setIsDark}
             />
-            <WorkProjectPage language={language} isDark={isDark} />
+            <WorkProjectPage language={language} isDark={isDark} t={t} />
           </>
         }
+      />
+      <Route
+        path="/works/:projectId/play"
+        element={<WorkProjectPlayPage language={language} isDark={isDark} t={t} />}
       />
     </Routes>
   );

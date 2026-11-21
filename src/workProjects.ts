@@ -4,6 +4,7 @@
  */
 
 import { LanguageCode } from "./types";
+import { portfolioDemoUrls } from "./lib/demoUrls";
 
 export type WorkProjectId =
   | "school-erp"
@@ -15,14 +16,24 @@ export interface WorkProjectMeta {
   id: WorkProjectId;
   title: Record<LanguageCode, string>;
   subtitle: Record<LanguageCode, string>;
+  overview?: Record<LanguageCode, string>;
   architectCredit: Record<LanguageCode, string>;
   tech: string[];
   highlights: Record<LanguageCode, string[]>;
+  logo: string;
+  gallery: string[];
   demoKind: "iframe" | "embedded";
   demoSrc?: string;
   demoPath?: string;
   demoHints?: Record<LanguageCode, string[]>;
   attribution: string;
+}
+
+export function resolveDemoUrl(project: WorkProjectMeta): string | undefined {
+  if (project.demoKind === "embedded") return project.demoPath;
+  if (project.id === "school-erp") return portfolioDemoUrls.school;
+  if (project.id === "e-menu") return portfolioDemoUrls.emenu;
+  return project.demoSrc;
 }
 
 const credit: Record<LanguageCode, string> = {
@@ -79,8 +90,34 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
         "Arabisch-RTL-interface",
       ],
     },
+    overview: {
+      en: "Graduation ERP for Epala School: admin, teachers, students, and parents in one cohesive Arabic RTL experience.",
+      ar: "نظام تخرج مدرسة إيبلا: مدير، معلم، طالب، وولي أمر في تجربة عربية موحّدة.",
+      de: "Abschluss-ERP für die Schule Epala.",
+      nl: "Afstudeer-ERP voor school Epala.",
+    },
+    logo: "/work-assets/school-logo.png",
+    gallery: [
+      "/work-assets/school-logo.png",
+      "/work-assets/school-dashboard.png",
+      "/work-assets/school-ui.png",
+    ],
     demoKind: "iframe",
-    demoSrc: "http://localhost:3001",
+    demoSrc: portfolioDemoUrls.school,
+    demoHints: {
+      en: [
+        "School ERP on port 3001 — in-browser demo data (no MySQL required).",
+        "One-click demo login: Admin / Teacher / Student / Parent.",
+        "Edits in demo mode stay in memory until server restart.",
+      ],
+      ar: [
+        "المدرسة على المنفذ 3001 — بيانات ديمو داخل الذاكرة (بدون MySQL).",
+        "دخول تجريبي بضغطة واحدة: مدير، معلم، طالب، ولي أمر.",
+        "التعديلات تبقى في الذاكرة حتى إعادة تشغيل السيرفر.",
+      ],
+      de: ["Port 3001", "Demo-Login-Buttons"],
+      nl: ["Poort 3001", "Demo-loginknoppen"],
+    },
     attribution: "المهندس خالد فاعور",
   },
   "block5-aleppo": {
@@ -121,8 +158,34 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
       de: ["Bürgermeldungen", "Rollenbasierte Dashboards", "Karten & Abstimmung"],
       nl: ["Meldingen", "Dashboards per rol", "Kaarten & stemmen"],
     },
+    overview: {
+      en: "Aleppo civic tech: complaints, initiatives, maps, and role-based dashboards — portfolio build runs fully in the browser.",
+      ar: "منصة مجتمعية لحلب: شكاوى ومبادرات وخرائط ولوحات حسب الدور — نسخة المعرض تعمل بالكامل في المتصفح.",
+      de: "Bürgerplattform Aleppo — eingebettete Demo.",
+      nl: "Burgerplatform Aleppo — ingebedde demo.",
+    },
+    logo: "/work-assets/block5-logo.svg",
+    gallery: [
+      "/work-assets/block5-logo.svg",
+      "/demos/block5/images/khaled.jpg",
+      "/demos/block5/images/ayaz.jpg",
+    ],
     demoKind: "embedded",
     demoPath: "/demos/block5/index.html",
+    demoHints: {
+      en: [
+        'One-click demo login on the sign-in screen (password: demo123).',
+        "Try Manager, Admin, Muktar, or Citizen roles.",
+        "Sample Aleppo complaints load automatically offline.",
+      ],
+      ar: [
+        "أزرار دخول تجريبي في شاشة تسجيل الدخول (كلمة المرور: demo123).",
+        "جرّب أدوار المدير أو المسؤول أو المختار أو المواطن.",
+        "بيانات شكاوى تجريبية تُحمّل تلقائياً بدون باكند.",
+      ],
+      de: ["Demo-Login demo123"],
+      nl: ["Demo-login demo123"],
+    },
     attribution: "المهندس خالد فاعور",
   },
   "e-menu": {
@@ -162,19 +225,32 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
       de: ["Gastmenü & Admin", "Filialen & Medien", "Zweisprachig"],
       nl: ["Gastenmenu & admin", "Filialen & media", "Tweetalig"],
     },
+    overview: {
+      en: "Guest-facing menu plus admin CMS: branches, offers, cart, and WhatsApp handoff.",
+      ar: "منيو للزبائن مع لوحة تحكم: فروع، عروض، سلة، وربط واتساب.",
+      de: "Gastmenü + Admin-CMS.",
+      nl: "Gastmenu + admin-CMS.",
+    },
+    logo: "/work-assets/emenu-logo.png",
+    gallery: [
+      "/work-assets/emenu-logo.png",
+      "/work-assets/emenu-preview.webp",
+    ],
     demoKind: "iframe",
-    demoSrc: "http://localhost:3002",
+    demoSrc: portfolioDemoUrls.emenu,
     demoHints: {
       en: [
-        "Start the demo server on port 3002 (local data backend).",
-        "Admin: use credentials from your local .env (not published).",
+        "Start E-Menu on port 3002 with NEXT_PUBLIC_PORTFOLIO_DEMO=true.",
+        'Guest menu at / — admin at /admin/login with one-click "Portfolio demo admin".',
+        "Demo admin: demo@kfaour.menu / demo123456",
       ],
       ar: [
-        "شغّل سيرفر الديمو على المنفذ 3002 (بيانات محلية).",
-        "الأدمن: من بيانات .env المحلية فقط (غير منشورة).",
+        "شغّل المنيو على المنفذ 3002 مع وضع المعرض.",
+        "المنيو للزبائن على / — لوحة الأدمن مع زر دخول تجريبي.",
+        "أدمن تجريبي: demo@kfaour.menu / demo123456",
       ],
-      de: ["Demo-Server Port 3002", "Admin nur lokal"],
-      nl: ["Demo op poort 3002", "Admin alleen lokaal"],
+      de: ["Port 3002", "Demo-Admin-Button"],
+      nl: ["Poort 3002", "Demo-admin-knop"],
     },
     attribution: "المهندس خالد فاعور",
   },
@@ -208,6 +284,17 @@ export const workProjects: Record<WorkProjectId, WorkProjectMeta> = {
       de: ["Genehmigungen", "Wochenpläne", "PWA"],
       nl: ["Goedkeuringen", "Weekroosters", "PWA"],
     },
+    overview: {
+      en: "HR attendance PWA for field teams: leaves, overtime, weekly grids, PDF/Excel exports.",
+      ar: "تطبيق دوام وإجازات للفرق الميدانية: إضافي، جداول أسبوعية، وتصدير.",
+      de: "HR-Anwesenheits-PWA.",
+      nl: "HR-aanwezigheids-PWA.",
+    },
+    logo: "/work-assets/mbco-logo.png",
+    gallery: [
+      "/work-assets/mbco-logo.png",
+      "/demos/mbco-pack/assets/mbco-pack-logo.png",
+    ],
     demoKind: "embedded",
     demoPath: "/demos/mbco-pack/index.html",
     demoHints: {
