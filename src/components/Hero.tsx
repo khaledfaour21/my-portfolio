@@ -142,7 +142,7 @@ export default function Hero({ language, isDark }: Props) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00FFCC]"></span>
             </span>
-            <span className="tracking-widest">{t.heroIntro}</span>
+            <span className="tracking-widest">{t.heroCredentials}</span>
           </motion.div>
 
           {/* Epic Title with Light Beam Undercoating */}
