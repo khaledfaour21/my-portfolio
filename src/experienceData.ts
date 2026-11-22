@@ -115,10 +115,10 @@ export const experienceData: ExperienceEntry[] = [
       nl: "IT-specialist & interne app-ontwikkelaar",
     },
     location: {
-      en: "Damascus Region, Syria",
-      ar: "دمشق وريفها، سوريا",
-      de: "Region Damaskus, Syrien",
-      nl: "Regio Damascus, Syrië",
+      en: "Aleppo, Syria",
+      ar: "حلب، سوريا",
+      de: "Aleppo, Syrien",
+      nl: "Aleppo, Syrië",
     },
     period: {
       en: "Jun 2026 — Present",
@@ -205,53 +205,6 @@ export const experienceData: ExperienceEntry[] = [
     ],
     stats: { output: "Multi-sector", security: "NDA-ready", tickets: "End-to-end" },
     icon: "star",
-  },
-  {
-    id: "portfolio-cv",
-    company: "Khaled Faour — Portfolio",
-    role: {
-      en: "Portfolio & Work Showcase Engineer",
-      ar: "مطور معرض أعمال وبورتفوليو CV",
-      de: "Portfolio- & Showcase-Engineer",
-      nl: "Portfolio- & showcase-engineer",
-    },
-    location: {
-      en: "Aleppo, Syria",
-      ar: "حلب، سوريا",
-      de: "Aleppo, Syrien",
-      nl: "Aleppo, Syrië",
-    },
-    period: {
-      en: "2025 — Present",
-      ar: "2025 — حتى الآن",
-      de: "2025 — heute",
-      nl: "2025 — heden",
-    },
-    points: {
-      en: [
-        "Built this multilingual portfolio (EN/AR/DE/NL) with dark/light UX and motion.",
-        "Embedded secure demos: Block 5, MBCO PACK, school ERP, and e-menu case studies.",
-        "Split case-study pages from full-screen playable demos for recruiter-friendly CV flow.",
-      ],
-      ar: [
-        "بناء هذا البورتفوليو متعدد اللغات مع وضع ليلي/نهاري وتجربة حركية.",
-        "دمج ديمو آمن: الكتلة الخامسة، MBCO PACK، المدرسة، والمنيو مع صفحات شرح.",
-        "فصل صفحة Case Study عن تشغيل التطبيق بملء الشاشة لتجربة CV واضحة للمديرين.",
-      ],
-      de: [
-        "Mehrsprachiges Portfolio mit Dark/Light-UX.",
-        "Eingebettete Demos: Block 5, MBCO, Schule, E-Menü.",
-        "Case Study vs. Vollbild-Demo für Recruiter.",
-      ],
-      nl: [
-        "Meertalig portfolio met dark/light UX.",
-        "Ingebedde demo's: Block 5, MBCO, school, e-menu.",
-        "Case study vs. fullscreen demo voor recruiters.",
-      ],
-    },
-    skills: ["Vite", "React", "React Router", "Tailwind", "i18n", "Demo UX"],
-    stats: { output: "4+ Demos", security: "No source leak", tickets: "CV-ready" },
-    icon: "milestone",
   },
   {
     id: "ai-solutions",
